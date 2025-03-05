@@ -1,0 +1,21 @@
+In the olden days of software development, a team of software developers would work on their individual feature for a software project for many months. Then, not too far from when the product needs to be shipped, the team of software developers add their code to a software repository to try and integrate it together. What happens is that the individual software engineer’s functionality worked on their machines, but when it came time to integrate all of the components together there were a plethora of bugs and errors. The integration process is rarely a smooth sailing and the complication that results from this process is known as integration hell.
+
+However, software engineering is a rapidly evolving industry with bright minds, so a plethora of solutions have been proposed to try and combat this issue. Some of these tools are version control software, source code repository software, and automation tools. Version control is software that developers use to track the changes to a software project. The de facto standard version control software is Git which you can download here: https://git-scm.com/downloads
+
+GitHub is a common tool used with git for source code management: https://github.com
+
+In other words, git is the command line tool that you can use to manage your software project and GitHub is the service provider that allows you to host your software project. It would be impossible to implement continuous integration without a version control software, I would recommend reading this tutorial to get yourself acquainted with how Git works. There’s endless information about Git on the internet such as Pro Git which is a free book released under the Creative Commons License: https://git-scm.com/book/en/v2
+
+The next tool that you’ll need is the CI server. There are many popular options out there such as Jenkins, CircleCI, GitLab, TeamCity, and CruiseControl. All of these options to choose from indicates that continuous integration is a technique that’s alive and well! With so many options comes the opportunity for analysis paralysis. With that being said the CI Server that I use is TravisCI.
+
+TravisCI. The reason for it is that it’s free for open source projects, integrates seamlessly with GitHub, and the absolute biggest for me is that it’s incredibly easy to set up. All you have to do is create an account, sync your GitHub repos with TravisCI, and then add a .travis.yml file at the root of our GitHub project and that’s it! 
+
+You can sign up for TravisCI here: https://travis-ci.org
+
+What’s cool about CI servers like TravisCI is that there are tools that you can use with it to help make it even more impactful on your teams such as code coverage: https://docs.travis-ci.com/user/coveralls/
+
+A CI server like Travis allows teams of developers to work together and quickly add changes to a central repository. Once changes are made to the repository the CI server is triggered, the build is automatically created, and then the software tests are executed. A build is a software artifact that can run on a machine. If any of the tests fail then the CI server will notify the team of the issue giving them an opportunity to fix it. This is a wonderful thing! WIth the CI Server in place teams can integrate several times a day and every time a new commit is made the CI Server will run the automated tests to ensure that the new code doesn’t break anything. The goal is to commit often because small changes are not as hard to fix compared to big ones. CI servers provide a plethora of benefits but the best way to gain a better understanding of them is to read through the docs: https://docs.travis-ci.com
+
+For example, you can use a CI Server like Travis CI to gain more confidence in your automated tests as it can be used to test different operating systems and programming languages: https://docs.travis-ci.com/user/multi-os/
+
+The incremental development approach of continuous integration fits well with the TDD philosophy of development. 
